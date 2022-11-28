@@ -1,0 +1,19 @@
+resources:
+  repositories:
+  - repository: java-azure-pipelines
+    type: git
+    name: vaugus/java-azure-pipelines
+    ref: main
+    trigger: none
+
+trigger:
+- main
+
+pr:
+- main
+
+pool:
+  default
+  
+extends:
+  template: templates/maven.yaml@java-azure-pipelines
