@@ -2,7 +2,7 @@ resources:
   repositories:
   - repository: java-azure-pipelines
     type: git
-    name: vaugus/java-azure-pipelines
+    name: java-azure-pipelines
     ref: main
     trigger: none
 
