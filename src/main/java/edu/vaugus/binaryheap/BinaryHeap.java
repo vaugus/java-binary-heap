@@ -1,7 +1,7 @@
-package edu.algorithm.design.binaryheap;
+package edu.vaugus.binaryheap;
 
-import edu.algorithm.design.binaryheap.model.Node;
-import edu.algorithm.design.binaryheap.model.PriorityQueue;
+import edu.vaugus.binaryheap.model.Node;
+import edu.vaugus.binaryheap.model.PriorityQueue;
 
 import java.util.Arrays;
 
@@ -78,10 +78,7 @@ public class BinaryHeap {
 
     public void heapify(int startIndex) {
         for (int i = 0; i < heapSize; i++) {
-            priorityQueue.insert(i, new Node.Builder()
-                                            .withIndex(i)
-                                            .withPriority(INFINITY)
-                                            .build());
+            priorityQueue.insert(i, new Node().index(i).priority(INFINITY));
         }
 
         priorityQueue.at(0).setPriority(0.0);

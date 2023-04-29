@@ -1,4 +1,4 @@
-package edu.algorithm.design.binaryheap.model;
+package edu.vaugus.binaryheap.model;
 
 import java.util.Arrays;
 import java.util.stream.Stream;

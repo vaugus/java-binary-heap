@@ -1,21 +1,18 @@
-package edu.algorithm.design.binaryheap;
+package edu.vaugus.binaryheap;
 
-import edu.algorithm.design.binaryheap.model.Node;
-import edu.algorithm.design.binaryheap.model.PriorityQueue;
+import edu.vaugus.binaryheap.model.Node;
+import edu.vaugus.binaryheap.model.PriorityQueue;
 
 public abstract class MockUtils {
 
     public static Node createHeapNode(int index, double priority) {
-        Node heapNode = new Node();
-        heapNode.setPriority(priority);
-        heapNode.setIndex(index);
-        return heapNode;
+        return new Node()
+            .index(index)
+            .priority(priority);
     }
 
     public static Node createHeapNode(double priority) {
-        return new Node.Builder()
-            .withPriority(priority)
-            .build();
+        return new Node().priority(priority);
     }
 
     public static PriorityQueue createPriorityQueue(Node... heapNodes) {
