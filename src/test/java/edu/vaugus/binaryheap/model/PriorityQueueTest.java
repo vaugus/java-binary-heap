@@ -1,11 +1,8 @@
-package edu.algorithm.design.binaryheap.model;
+package edu.vaugus.binaryheap.model;
 
 import org.junit.jupiter.api.Test;
 
-import edu.algorithm.design.binaryheap.model.Node;
-import edu.algorithm.design.binaryheap.model.PriorityQueue;
-
-import static edu.algorithm.design.binaryheap.MockUtils.createHeapNode;
+import static edu.vaugus.binaryheap.MockUtils.createHeapNode;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PriorityQueueTest {

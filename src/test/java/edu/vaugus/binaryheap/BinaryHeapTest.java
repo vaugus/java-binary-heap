@@ -1,13 +1,11 @@
-package edu.algorithm.design.binaryheap;
+package edu.vaugus.binaryheap;
 
 
+import edu.vaugus.binaryheap.model.Node;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import edu.algorithm.design.binaryheap.BinaryHeap;
-import edu.algorithm.design.binaryheap.model.Node;
-import edu.algorithm.design.binaryheap.model.PriorityQueue;
-
-import static edu.algorithm.design.binaryheap.MockUtils.createHeapNode;
+import static edu.vaugus.binaryheap.MockUtils.createHeapNode;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -15,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BinaryHeapTest {
 
-    private final Node priorityTwenty = createHeapNode(20.0); 
+    private final Node priorityTwenty = createHeapNode(20.0);
     private final Node priorityTen = createHeapNode(10.0);
     private final Node priorityFive = createHeapNode(5.0);
 
@@ -28,7 +26,7 @@ public class BinaryHeapTest {
         assertTrue(heap.getIndexMap() != null);
         assertTrue(heap.getPriorityQueue() != null);
         assertArrayEquals(new int[10], heap.getIndexMap());
-        assertEquals(10, heap.getPriorityQueue().size());
+        Assertions.assertEquals(10, heap.getPriorityQueue().size());
         heap.getPriorityQueue().stream().forEach(node -> assertNull(node));
     }
 
@@ -98,15 +96,15 @@ public class BinaryHeapTest {
 
         setupHeapReverseOrder();
         heap.bubbleDown(0);
-        assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
+        Assertions.assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
         
         setupHeapIncorrectOrder();
         heap.bubbleDown(0);
-        assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
+        Assertions.assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
 
         setupHeapCorrectOrder();
         heap.bubbleDown(0);
-        assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
+        Assertions.assertEquals(priorityFive.getPriority(), heap.extractMin().getPriority());
     }
 
     @Test
@@ -114,12 +112,12 @@ public class BinaryHeapTest {
         heap = new BinaryHeap(3);
 
         setupHeapCorrectOrder();
-        assertEquals(priorityTen, heap.getPriorityQueue().at(1));
+        Assertions.assertEquals(priorityTen, heap.getPriorityQueue().at(1));
 
         heap.decreaseKey(1, 2.0);
 
-        assertEquals(1, heap.getPriorityQueue().at(0).getIndex());
-        assertEquals(2.0, heap.getPriorityQueue().at(0).getPriority());
+        Assertions.assertEquals(1, heap.getPriorityQueue().at(0).getIndex());
+        Assertions.assertEquals(2.0, heap.getPriorityQueue().at(0).getPriority());
     }
 
     @Test
@@ -128,18 +126,18 @@ public class BinaryHeapTest {
 
         heap.heapify(0);
 
-        assertEquals(0, heap.getPriorityQueue().at(0).getIndex());
-        assertEquals(0.0, heap.getPriorityQueue().at(0).getPriority());
-        assertEquals(1, heap.getPriorityQueue().at(1).getIndex());
-        assertEquals(Double.MAX_VALUE, heap.getPriorityQueue().at(1).getPriority());
-        assertEquals(2, heap.getPriorityQueue().at(2).getIndex());
-        assertEquals(Double.MAX_VALUE, heap.getPriorityQueue().at(2).getPriority());
+        Assertions.assertEquals(0, heap.getPriorityQueue().at(0).getIndex());
+        Assertions.assertEquals(0.0, heap.getPriorityQueue().at(0).getPriority());
+        Assertions.assertEquals(1, heap.getPriorityQueue().at(1).getIndex());
+        Assertions.assertEquals(Double.MAX_VALUE, heap.getPriorityQueue().at(1).getPriority());
+        Assertions.assertEquals(2, heap.getPriorityQueue().at(2).getIndex());
+        Assertions.assertEquals(Double.MAX_VALUE, heap.getPriorityQueue().at(2).getPriority());
     }
 
     private void assertPriorityQueueOrder(int... order) {
-        assertEquals(heap.getPriorityQueue().at(order[0]), priorityFive);
-        assertEquals(heap.getPriorityQueue().at(order[1]), priorityTen);
-        assertEquals(heap.getPriorityQueue().at(order[2]), priorityTwenty);
+        Assertions.assertEquals(heap.getPriorityQueue().at(order[0]), priorityFive);
+        Assertions.assertEquals(heap.getPriorityQueue().at(order[1]), priorityTen);
+        Assertions.assertEquals(heap.getPriorityQueue().at(order[2]), priorityTwenty);
     }
     
     private void setupHeapReverseOrder() {
