@@ -100,18 +100,4 @@ public class BinaryHeap {
         return "BinaryHeap [heapSize=" + heapSize + ", indexMap=" + Arrays.toString(indexMap) + ", priorityQueue="
                 + priorityQueue + "]";
     }
-
-    
 }
-
-// TODO
-// Easier extractMin implementation
-
-// // Store the minimum value, and remove it from heap
-// HeapNode root = priorityQueue.at(0);
-// priorityQueue.insert(0, priorityQueue.at(heapSize - 1));
-// heapSize--;
-
-// heapify(0);
-
-// return root;

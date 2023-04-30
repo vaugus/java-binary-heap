@@ -7,17 +7,14 @@ jobs:
     name: Build and test the Java project 
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout files in the repository
-        uses: actions/checkout@v3
+    - name: Checkout files in the repository
+      uses: actions/checkout@v3
 
-      - name: Setup Java 
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: '17'
+    - name: Setup Java 
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
 
-      - name: Build 
-        run: mvn clean install
-
-      - name: Test 
-        run: mvn clean verify
+    - name: Build and Test 
+      run: mvn -U clean verify
