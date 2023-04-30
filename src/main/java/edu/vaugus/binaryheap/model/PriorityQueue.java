@@ -11,8 +11,8 @@ public class PriorityQueue {
         this.queue = new Node[size];
     }
 
-    public void insert(int slot, Node heapNode) {
-        queue[slot] = heapNode;
+    public void insert(int slot, Node node) {
+        queue[slot] = node;
     }
 
     public Node at(int index) {
