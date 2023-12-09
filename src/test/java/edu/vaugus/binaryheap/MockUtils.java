@@ -6,13 +6,14 @@ import edu.vaugus.binaryheap.model.PriorityQueue;
 public abstract class MockUtils {
 
     public static Node createHeapNode(int index, double priority) {
-        return new Node()
+        return new Node.Builder()
             .index(index)
-            .priority(priority);
+            .priority(priority)
+            .build();
     }
 
     public static Node createHeapNode(double priority) {
-        return new Node().priority(priority);
+        return new Node.Builder().priority(priority).build();
     }
 
     public static PriorityQueue createPriorityQueue(Node... heapNodes) {
