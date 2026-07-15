@@ -1,1 +1,1 @@
-# java-binary-heap
+# Binary Heap implementation in Java
